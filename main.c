@@ -22,6 +22,7 @@
 
 #include "rsync.h"
 #include "inums.h"
+include "stdio.h"
 #include "ifuncs.h"
 #include "io.h"
 #if defined CONFIG_LOCALE && defined HAVE_LOCALE_H
@@ -1313,7 +1314,7 @@ int client_run(int f_in, int f_out, pid_t pid, int argc, char *argv[])
 			start_write_batch(f_out);
 
 		become_copy_as_user();
-
+  
 		flist = send_file_list(f_out, argc, argv);
 		if (DEBUG_GTE(FLIST, 3))
 			rprintf(FINFO,"file list sent\n");
@@ -1710,7 +1711,7 @@ static void unset_env_var(const char *var)
 int main(int argc,char *argv[])
 {
 	int ret;
-
+        printf("Mohamed was here");
 	raw_argc = argc;
 	raw_argv = argv;
 
